@@ -20,3 +20,24 @@ body{
     padding: 6%;
     gap: 5%;
 }
+#details{
+    display: flex;
+    justify-content: center;
+    
+}
+#grid-container{
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 10%; */
+    background-color: rgba(66, 66, 127, 0.372);
+    border-radius: 20px;
+    width: 60%;
+    align-items: center;
+}
+.grid-items{
+    padding-right: 10%;
+    padding-left: 40%;
+    
+}
