@@ -24,7 +24,7 @@ function showError(error) {
     }
 }
 function getCityName(latitude, longitude) {
-    const apiKey = 'AIzaSyDhcL9_hPJU0QGXCr4sJLg970yGnG0L35Y';  // Replace with your Google Maps API key
+    const apiKey = 'YOUR API';  // Replace with your Google Maps API key
     const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
 
     fetch(url)
