@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(6, 6, 28);
+    color: white;
+}
+#searchBar{
+    display: flex;
+    justify-content: center;
+}
+#searchBar input{
+    width: 100vh;
+    border: 20%;
+    margin-top: 7%;
+    height: 5vh;
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 6%;
+    gap: 5%;
+}
