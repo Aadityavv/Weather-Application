@@ -13,7 +13,7 @@
     <section id="searchBar">
         <div>
             <form action="/search" method="post" id="search" name="search">
-                <input type="text" placeholder="Search Location">
+                <input type="text" placeholder="Search Location" name="search">
             </form>
         </div>
     </section>
@@ -24,8 +24,7 @@
     <section>
         <div id="main">
         <div >
-            <p id="location">Fetching location...</p>
-            <!-- <h2>Jhansi</h2> -->
+            <h2><%=city%>, <%=country%></h2>
             <p>Chances of rain: </p>
             <h1>31deg</h1>
         </div>

@@ -13,6 +13,8 @@ body{
     height: 5vh;
     border-radius: 20px;
     background-color: rgb(41, 38, 45);
+    color: white;
+    border-color: white;
 }
 
 #main{
@@ -55,4 +57,17 @@ body{
     background-color: rgba(0, 255, 255, 0.181);
     margin-top: 17%;
     border-radius: 40px;
+}
+
+#main h2{
+    font-size: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+#main h1,p{
+    font-family: cursive;
+    font-size: 20px;
+    margin: 0%;
+    padding: 0%;
 }
