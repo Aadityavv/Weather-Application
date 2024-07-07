@@ -24,7 +24,7 @@ app.get("/",async(req,res)=>{
         icon:searchedLocation.data.weather[0].icon,
         realTemp:Math.floor((searchedLocation.data.main.feels_like)-273.15),
         wind:searchedLocation.data.wind.speed,
-        chancesRain:searchedLocation.data.rain["1h"],
+        description:searchedLocation.data.weather[0].description,
         humidity:searchedLocation.data.main.humidity
     })        
     })
@@ -44,7 +44,7 @@ app.post("/search", async(req,res)=>{
         icon:searchedLocation.data.weather[0].icon,
         realTemp:Math.floor((searchedLocation.data.main.feels_like)-273.15),
         wind:searchedLocation.data.wind.speed,
-        chancesRain:searchedLocation.data.rain["1h"],
+        description:searchedLocation.data.weather[0].description,
         humidity:searchedLocation.data.main.humidity
     })
 })
