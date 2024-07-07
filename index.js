@@ -91,16 +91,16 @@ app.post("/search", async (req, res) => {
             color="rgba(52, 152, 253, 0.485)";
        }
        else if(weatherMain==="Cloudy"){
-            color="rgb(131,131,131,0.3);";
+            color="rgba(131,131,131,0.3)";
        }
        else if(weatherMain==="Rain"){
-            color="rgb(50,50,50,0.3);";
+            color="rgba(99, 112, 119, 0.641)";
        }
        else if(weatherMain==="Drizzle" ||weatherMain==="Fog"||weatherMain==="Mist"){
-            color="rgb(172,172,172,0.3);";
+            color="rgba(172,172,172,0.3)";
        }
        else if(weatherMain==="snow"){
-            color="rgb(255,255,255,0.3);";
+            color="rgba(255,255,255,0.3)";
        }
 
 
