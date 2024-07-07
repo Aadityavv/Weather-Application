@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');  // Make sure your view engine is set to ejs
 const openweatherKey = "62fb0753edefa3493431dc7cfa992c7b";
 
+
 app.get("/", async (req, res) => {
     try {
         const getLocation = await axios.get("http://ip-api.com/json/");
@@ -23,6 +24,26 @@ app.get("/", async (req, res) => {
         const sunsetTimestamp = searchedLocation.data.sys.sunset * 1000;
         const sunsetDate = new Date(sunsetTimestamp);
         const sunsetStr = sunsetDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const weatherMain=searchedLocation.data.weather[0].main;
+
+        let color="";
+        console.log(weatherMain);
+
+        if(weatherMain==="Clear"){
+             color="rgba(255, 232, 80, 0.485)";
+        }
+        else if(weatherMain==="Cloudy"){
+             color="rgb(131,131,131,0.3);";
+        }
+        else if(weatherMain==="Rain"){
+             color="rgb(50,50,50,0.3);";
+        }
+        else if(weatherMain==="Drizzle" ||weatherMain==="Fog"||weatherMain==="Mist"){
+             color="rgb(172,172,172,0.3);";
+        }
+        else if(weatherMain==="snow"){
+             color="rgb(255,255,255,0.3);";
+        }
 
         res.render("index", {
             city: searchedLocation.data.name,
@@ -38,7 +59,8 @@ app.get("/", async (req, res) => {
             sunrise: sunriseStr,
             sunset: sunsetStr,
             latitude: searchedLocation.data.coord.lat,
-            longitude: searchedLocation.data.coord.lon
+            longitude: searchedLocation.data.coord.lon,
+            color:color
         });
     } catch (error) {
         console.error("Error fetching weather data:", error);
@@ -61,6 +83,27 @@ app.post("/search", async (req, res) => {
         const sunsetDate = new Date(sunsetTimestamp);
         const sunsetStr = sunsetDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
+        const weatherMain=searchedLocation.data.weather[0].main;
+        let color="";
+        console.log(weatherMain);
+
+        if(weatherMain==="Clear"){
+            color="rgba(52, 152, 253, 0.485)";
+       }
+       else if(weatherMain==="Cloudy"){
+            color="rgb(131,131,131,0.3);";
+       }
+       else if(weatherMain==="Rain"){
+            color="rgb(50,50,50,0.3);";
+       }
+       else if(weatherMain==="Drizzle" ||weatherMain==="Fog"||weatherMain==="Mist"){
+            color="rgb(172,172,172,0.3);";
+       }
+       else if(weatherMain==="snow"){
+            color="rgb(255,255,255,0.3);";
+       }
+
+
         res.render("index", {
             city: searchedLocation.data.name,
             country: searchedLocation.data.sys.country,
@@ -75,7 +118,8 @@ app.post("/search", async (req, res) => {
             sunrise: sunriseStr,
             sunset: sunsetStr,
             latitude: searchedLocation.data.coord.lat,
-            longitude: searchedLocation.data.coord.lon
+            longitude: searchedLocation.data.coord.lon,
+            color:color
         });
     } catch (error) {
         console.error("Error fetching weather data:", error);
