@@ -7,12 +7,15 @@ const port=3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 const openweatherKey="62fb0753edefa3493431dc7cfa992c7b";
+const currentTimestamp = Math.floor(Date.now() / 1000);
+
+// console.log(currentTimestamp);
 
 app.get("/",async(req,res)=>{
     const getLocation= await axios.get("http://ip-api.com/json/")
     console.log(getLocation.data.city);
     const city=getLocation.data.city;
-    const searchedLocation= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openweatherKey}`);
+    const searchedLocation= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&dt=${currentTimestamp}&appid=${openweatherKey}`);
 
     
 
@@ -34,7 +37,7 @@ app.post("/search", async(req,res)=>{
     const city=req.body.search;
     console.log(city);
 
-    const searchedLocation= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openweatherKey}`);
+    const searchedLocation= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&dt=${currentTimestamp}&appid=${openweatherKey}`);
 
     res.render("index.ejs",{
         city:searchedLocation.data.name,
