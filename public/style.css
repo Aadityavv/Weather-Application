@@ -9,8 +9,10 @@ body{
 #searchBar input{
     width: 100vh;
     border: 20%;
-    margin-top: 7%;
+    margin-top: 3%;
     height: 5vh;
+    border-radius: 20px;
+    background-color: rgb(41, 38, 45);
 }
 
 #main{
@@ -40,4 +42,17 @@ body{
     padding-right: 10%;
     padding-left: 40%;
     
+}
+#floatHome{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#secondPart{
+    background-color: rgba(0, 255, 255, 0.181);
+    margin-top: 17%;
+    border-radius: 40px;
 }
