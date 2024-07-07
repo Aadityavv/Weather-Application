@@ -5,6 +5,7 @@ body{
 #searchBar{
     display: flex;
     justify-content: center;
+    padding-left: 15%;
 }
 #searchBar input{
     width: 100vh;

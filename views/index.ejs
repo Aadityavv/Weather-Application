@@ -25,11 +25,12 @@
         <div id="main">
         <div >
             <h2><%=city%>, <%=country%></h2>
-            <p>Chances of rain: </p>
-            <h1>31deg</h1>
+            <p><%=expectations%> </p>
+            <h1><%=temp%>°C</h1>
         </div>
         <div>
-            <img src="/images/cloudy.png" alt="" srcset="" height="150px">
+            <!-- <img src="/images/cloudy.png" alt="" srcset="" height="150px"> -->
+             <img src="https://openweathermap.org/img/wn/<%=icon%>@4x.png" height="150px">
         </div>
     </div>
     </section>
@@ -42,28 +43,28 @@
             <div class="grid-items">
                 <!-- icon -->
                 <p>Real Feel</p>
-                <h1>31deg</h1>
+                <h1><%=realTemp%></h1>
             </div>
 
 
             <div class="grid-items">
                 <!-- icon -->
                 <p>Wind</p>
-                <h1>0.2 km/hr</h1>
+                <h1><%=wind%></h1>
             </div>
 
 
             <div class="grid-items">
                 <!-- icon -->
                 <p>Chances of Rain</p>
-                <h1>0%</h1>
+                <h1><%=chancesRain%></h1>
             </div>
 
 
             <div class="grid-items">
                 <!-- icon -->
-                <p>UV Index</p>
-                <h1>3</h1>
+                <p>Humidity</p>
+                <h1><%=humidity%></h1>
             </div>
 
 
