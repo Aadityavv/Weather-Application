@@ -30,7 +30,7 @@ app.get("/", async (req, res) => {
         console.log(weatherMain);
 
         if(weatherMain==="Clear"){
-             color="rgba(255, 232, 80, 0.485)";
+             color="rgba(255, 232, 80, 0.3)";
         }
         else if(weatherMain==="Cloudy"){
              color="rgb(131,131,131,0.3);";
@@ -88,13 +88,13 @@ app.post("/search", async (req, res) => {
         console.log(weatherMain);
 
         if(weatherMain==="Clear"){
-            color="rgba(52, 152, 253, 0.485)";
+            color="rgba(52, 152, 253, 0.3)";
        }
        else if(weatherMain==="Cloudy"){
             color="rgba(131,131,131,0.3)";
        }
        else if(weatherMain==="Rain"){
-            color="rgba(99, 112, 119, 0.641)";
+            color="rgba(99, 112, 119, 0.3)";
        }
        else if(weatherMain==="Drizzle" ||weatherMain==="Fog"||weatherMain==="Mist"){
             color="rgba(172,172,172,0.3)";
