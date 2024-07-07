@@ -60,7 +60,7 @@ body{
 
 #secondPart{
     background-color: rgba(255, 255, 255, 0.095);
-    margin-top: 17%;
+    margin-top: 40%;
     border-radius: 40px;
     display: grid;
     grid-template-columns:2fr 1fr;
