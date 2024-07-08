@@ -36,7 +36,7 @@ app.get("/", async (req, res) => {
              color="rgb(131,131,131,0.3);";
         }
         else if(weatherMain==="Rain"){
-             color="rgb(50,50,50,0.3);";
+             color="rgba(117, 182, 217, 0.8)";
         }
         else if(weatherMain==="Drizzle" ||weatherMain==="Fog"||weatherMain==="Mist"){
              color="rgb(172,172,172,0.3);";
@@ -94,7 +94,7 @@ app.post("/search", async (req, res) => {
             color="rgba(131,131,131,0.3)";
        }
        else if(weatherMain==="Rain"){
-            color="rgba(99, 112, 119, 0.3)";
+            color="rgba(117, 182, 217, 0.8)";
        }
        else if(weatherMain==="Drizzle" ||weatherMain==="Fog"||weatherMain==="Mist"){
             color="rgba(172,172,172,0.3)";
@@ -117,8 +117,8 @@ app.post("/search", async (req, res) => {
             pressure: searchedLocation.data.main.pressure,
             sunrise: sunriseStr,
             sunset: sunsetStr,
-            latitude: searchedLocation.data.coord.lat,
-            longitude: searchedLocation.data.coord.lon,
+            minTemp: Math.floor(searchedLocation.data.main.temp_min-273.15),
+            maxTemp: Math.floor(searchedLocation.data.main.temp_max-273.15),
             color:color
         });
     } catch (error) {
