@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');  // Make sure your view engine is set to ejs
-const openweatherKey = "YOUR API KEY";
+const openweatherKey = "62fb0753edefa3493431dc7cfa992c7b";
 
 
 app.get("/", async (req, res) => {
@@ -58,8 +58,8 @@ app.get("/", async (req, res) => {
             pressure: searchedLocation.data.main.pressure,
             sunrise: sunriseStr,
             sunset: sunsetStr,
-            latitude: searchedLocation.data.coord.lat,
-            longitude: searchedLocation.data.coord.lon,
+            minTemp: Math.floor(searchedLocation.data.main.temp_min-273.15),
+            maxTemp: Math.floor(searchedLocation.data.main.temp_max-273.15),
             color:color
         });
     } catch (error) {
