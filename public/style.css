@@ -1,6 +1,7 @@
 body{
     background-color: rgb(6, 6, 28);
     color: white;
+    
 }
 #searchBar{
     display: flex;
@@ -107,4 +108,12 @@ margin-top: 0;
 .grid-items p,.tag{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* background-color: rgba(117, 182, 217, 0.8); */
+}
+
+@media (max-width:2400px)and (min-width:600px) {
+    #secondPart{
+        height: 400px;
+        /* padding-top: 50%; */
+        margin-top: 40%;
+    }
 }
