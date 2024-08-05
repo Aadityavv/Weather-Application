@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');  // Make sure your view engine is set to ejs
-const openweatherKey = "API KEY";
+const openweatherKey = "62fb0753edefa3493431dc7cfa992c7b";
 
 
 app.get("/", async (req, res) => {
